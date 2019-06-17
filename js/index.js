@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street\n Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -62,12 +62,13 @@ nav.appendChild(newATag);
 
 otherNewATag.appendChild(extrasText);
 nav.appendChild(otherNewATag);
+
 const h1 = document.querySelector('h1');
 h1.textContent = siteContent['cta'] ['h1'];
 
 const allNavLinks = document.querySelectorAll('nav a');
 allNavLinks.forEach((link) => {
-  link.getElementsByClassName.color = 'green';
+  link.style.color = 'green';
 })
 
 //title
@@ -77,6 +78,11 @@ title.innerText = "DOM\nIs\n Awesome";
 //img
 let ctaImg = document.querySelector('.cta img')
 ctaImg.setAttribute('src', siteContent['cta']["img-src"])
+
+//Middle Img
+let middleImg = document.querySelector('#middle-img')
+middleImg.setAttribute('src', siteContent['main-content']["middle-img-src"])
+
 
 //button
 const ctaBut = document.querySelector('button').textContent = siteContent['cta']['button'];
@@ -99,10 +105,14 @@ middleP[4].textContent = siteContent['main-content']["vision-content"];
 const contactHeader = document.querySelector(".contact h4")
 contactHeader.innerText = "Contact";
 
-const contactP = document.querySelectorAll('.contact p')
-contactP[0].textContent = siteContact[""]
-
-
 //contact
+const contactP = document.querySelectorAll('.contact p')
+contactP[0].textContent = siteContent["contact"]["address"]
+contactP[0].style.whiteSpace = "pre"
+contactP[1].textContent = siteContent["contact"]["phone"]
+contactP[2].textContent = siteContent["contact"]["email"]
+
+//footer
+const footer = document.querySelector('footer p').textContent = siteContent['footer']["copyright"]
 
 
